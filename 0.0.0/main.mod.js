@@ -5,7 +5,7 @@ const uiTabs = [];
 
 class puiMod extends PolyMod {  
   
-  const addMenuButton = function(image_path, text, onClick, order=null) {
+  addMenuButton(image_path, text, onClick, order=null) {
       const button = document.createElement("button");
       button.className = "button button-image";
       button.innerHTML = `<img src="${image_path}">`;
@@ -18,17 +18,17 @@ class puiMod extends PolyMod {
       registerElement("mnu", button, onClick, order);
   };
   
-  const addMenuTab = function(text, image_path, onClick) {
+  addMenuTab(text, image_path, onClick) {
       uiTabs.push([text,image_path,onClick]);  
   };
   
-  const registerElement = function(id, element, onClick, extras=null) {
+  registerElement(id, element, onClick, extras=null) {
       uiButtons.push([id, element, onClick, extras]);
       console.log(uiButtons);
   };
   
   
-  const createTabs = function(parent, audio, onclick) {
+  createTabs(parent, audio, onclick) {
       for (let i = 0; i < uiTabs.length; i++) {
           const button = document.createElement("button");
           button.className = `button ${uiTabs[i][0].toLowerCase()}`;
