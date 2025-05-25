@@ -1,9 +1,9 @@
 import { PolyMod, MixinType } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
-class puiMod extends PolyMod {
-  const uiButtons = [];
-  const uiTabs = [];
-  
+const uiButtons = [];
+const uiTabs = [];
+
+class puiMod extends PolyMod {  
   
   const addMenuButton = function(image_path, text, onClick, order=null) {
       const button = document.createElement("button");
