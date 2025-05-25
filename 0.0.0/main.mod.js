@@ -2,7 +2,7 @@ import { PolyMod, MixinType } from "https://pml.orangy.cfd/PolyTrackMods/PolyMod
 
 class puiMod extends PolyMod {
   const uiButtons = [];
-  const uiTabs = []
+  const uiTabs = [];
   
   
   const addMenuButton = function(image_path, text, onClick, order=null) {
@@ -23,7 +23,7 @@ class puiMod extends PolyMod {
   };
   
   const registerElement = function(id, element, onClick, extras=null) {
-      uiButtons.push([id, element, onClick, extras])
+      uiButtons.push([id, element, onClick, extras]);
       console.log(uiButtons);
   };
   
@@ -64,7 +64,7 @@ class puiMod extends PolyMod {
               wD(this, iD, "f").splice(item[3]-1,0,item[1]);
           } else {
               wD(this, iD, "f").push(item[1]);
-          }
+          };
       });
     };
     polyModLoader.registerFuncMixin("$k", MixinType.INSERT, "Kk(this, Ck, "f").prepend(m),", () => {
@@ -80,7 +80,7 @@ class puiMod extends PolyMod {
       });
     };
   };
-}
+};
 
 
 export let polyMod = new puiMod();
