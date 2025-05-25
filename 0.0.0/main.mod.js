@@ -72,7 +72,7 @@ class puiMod extends PolyMod {
               wD(this, iD, "f").push(item[1]);
           };
       });
-    };
+    });
     polyModLoader.registerFuncMixin("$k", MixinType.INSERT, "Kk(this, Ck, "f").prepend(m),", () => {
       createTabs();
       uiTabs.forEach((item) => {
@@ -85,7 +85,7 @@ class puiMod extends PolyMod {
          u.appendChild(button);
       });
     };
-  };
+  });
 };
 
 
