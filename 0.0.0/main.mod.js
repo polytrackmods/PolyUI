@@ -1,52 +1,52 @@
 import { PolyMod, MixinType } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
-const uiButtons = [];
-const uiTabs = [];
-
-const addMenuButton = function(image_path, text, onClick, order=null) {
-    const button = document.createElement("button");
-    button.className = "button button-image";
-    button.innerHTML = `<img src="${image_path}">`;
-
-
-    const w = document.createElement("p");
-    w.textContent = text;
-    button.appendChild(w);
-
-    registerElement("mnu", button, onClick, order);
-};
-
-const addMenuTab = function(text, image_path, onClick) {
-    uiTabs.push([text,image_path,onClick]);  
-};
-
-const registerElement = function(id, element, onClick, extras=null) {
-    uiButtons.push([id, element, onClick, extras]);
-    console.log(uiButtons);
-};
-
-
-const createTabs = function(parent, audio, onclick) {
-    for (let i = 0; i < uiTabs.length; i++) {
-        const button = document.createElement("button");
-        button.className = `button ${uiTabs[i][0].toLowerCase()}`;
-        
-        button.append(document.createTextNode(`${uiTabs[i][0]} tracks`));
-        
-        const cover = document.createElement("div");
-        cover.className = "cover";
-        button.prepend(cover);
-
-        const style = document.createElement("style");
-        style.textContent = `button.${uiTabs[i][0].toLowerCase()}::before {\n\tbackground-image: url(${uiTabs[i][1]});\n}`;
-        document.head.appendChild(style);
-
-        uiTabs[i].push(button);
-    }
-};
-
 class puiMod extends PolyMod {  
-  
+
+    const uiButtons = [];
+    const uiTabs = [];
+    
+    const addMenuButton = function(image_path, text, onClick, order=null) {
+        const button = document.createElement("button");
+        button.className = "button button-image";
+        button.innerHTML = `<img src="${image_path}">`;
+    
+    
+        const w = document.createElement("p");
+        w.textContent = text;
+        button.appendChild(w);
+    
+        registerElement("mnu", button, onClick, order);
+    };
+    
+    const addMenuTab = function(text, image_path, onClick) {
+        uiTabs.push([text,image_path,onClick]);  
+    };
+    
+    const registerElement = function(id, element, onClick, extras=null) {
+        uiButtons.push([id, element, onClick, extras]);
+        console.log(uiButtons);
+    };
+    
+    
+    const createTabs = function(parent, audio, onclick) {
+        for (let i = 0; i < uiTabs.length; i++) {
+            const button = document.createElement("button");
+            button.className = `button ${uiTabs[i][0].toLowerCase()}`;
+            
+            button.append(document.createTextNode(`${uiTabs[i][0]} tracks`));
+            
+            const cover = document.createElement("div");
+            cover.className = "cover";
+            button.prepend(cover);
+    
+            const style = document.createElement("style");
+            style.textContent = `button.${uiTabs[i][0].toLowerCase()}::before {\n\tbackground-image: url(${uiTabs[i][1]});\n}`;
+            document.head.appendChild(style);
+    
+            uiTabs[i].push(button);
+        }
+    };
+
  
   
   init = function(polyModLoader) {
