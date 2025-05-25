@@ -2,10 +2,14 @@ import { PolyMod, MixinType } from "https://pml.orangy.cfd/PolyTrackMods/PolyMod
 
 class puiMod extends PolyMod {  
 
-    const uiButtons = [];
-    const uiTabs = [];
+  
+  init = function(polyModLoader) {
+
     
-    const addMenuButton = function(image_path, text, onClick, order=null) {
+    this.uiButtons = [];
+    this.uiTabs = [];
+    
+    this.addMenuButton = function(image_path, text, onClick, order=null) {
         const button = document.createElement("button");
         button.className = "button button-image";
         button.innerHTML = `<img src="${image_path}">`;
@@ -18,17 +22,17 @@ class puiMod extends PolyMod {
         registerElement("mnu", button, onClick, order);
     };
     
-    const addMenuTab = function(text, image_path, onClick) {
+    this.addMenuTab = function(text, image_path, onClick) {
         uiTabs.push([text,image_path,onClick]);  
     };
     
-    const registerElement = function(id, element, onClick, extras=null) {
+    this.registerElement = function(id, element, onClick, extras=null) {
         uiButtons.push([id, element, onClick, extras]);
         console.log(uiButtons);
     };
     
     
-    const createTabs = function(parent, audio, onclick) {
+    this.createTabs = function(parent, audio, onclick) {
         for (let i = 0; i < uiTabs.length; i++) {
             const button = document.createElement("button");
             button.className = `button ${uiTabs[i][0].toLowerCase()}`;
@@ -46,10 +50,10 @@ class puiMod extends PolyMod {
             uiTabs[i].push(button);
         }
     };
+    
 
- 
-  
-  init = function(polyModLoader) {
+
+      
     polyModLoader.registerFuncMixin("hD", MixinType.TAIL, () => {
       const subdata = uiButtons.filter(arr => arr[0] === "mnu");
       subdata.forEach((item) => {
