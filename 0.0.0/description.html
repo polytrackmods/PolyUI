@@ -7,6 +7,22 @@ h1, h2, h3, p {
   color: white;
   font-family: 'ForcedSquare';
 }
+code {
+  background-color: #152555;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 0.95em;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.dec {
+  color: red;
+}
+.function {
+  color: blue;
+}
+.string {
+  color: green;
+}
 </style>
 <div style="text-align: center; background-color: #212b58;">
   <div style="background-color: #28346a;">
@@ -16,5 +32,15 @@ h1, h2, h3, p {
     <br>
   </div>
   <br>
-  <h2>A library which makes PolyTrack UI elements easier to work with.</h2>
+  <h3>A library which makes PolyTrack UI elements easier to work with (especially in other mods).</h3>
+  <br>
+  <h2>Calling and Using Functions:</h2>
+  <h3>In order to call a function from PUI in your mod, you first need to make sure you have PUI listed as a dependency in your mod's manifest.json (check out PML documentation for that).\nNext, in order to use it PUI functions in your mod's code, you will have to do this:\n</h3>
+  
+  <code>
+  <span class="dec">let</span> polyUI = pml.<span class="function">getMod</span>(<span class="string">"pui"</span>);
+  polyUI.<span class="function">function1</span>();
+  polyUI.<span class="function">function2</span>();
+  </code>
+  
 </div>
