@@ -42,7 +42,7 @@ h1 {
   color: orange;
 }
 img {
-  width = 80%;
+  width: 80%;
 }
 </style>
 <div style="text-align: center; background-color: #212b58;">
@@ -71,10 +71,11 @@ img {
   <div class="code">
     <span class="function">addMenuButton</span>(<span class="string">image_path</span>, <span class="string">text</span>, <span class="function">onClick</span>, <span class="int">order (optional)</span>)
   </div>
-  <h3>This function adds a button to the main menu screen of polytrack. <br><br> Here is an example implementation of this:</h3>
+  <h3>This function adds a button to the main menu screen of polytrack. <br><br><br> Here is an example implementation of this:</h3>
   <div class="code">
-    <span class="function">addMenuButton</span>(<span class="string">"images/pending.svg"</span>, <span class="string">"Clock"</span>, <span class="function">() => {<br>console.log("Clock Started");<br>}</span>, <span class="int">2</span>)
+    <span class="function">polyUI.addMenuButton</span>(<span class="string">"images/pending.svg"</span>, <span class="string">"Clock"</span>, <span class="function">() => {<br>console.log("Clock Started");<br>}</span>, <span class="int">2</span>)
   </div>
   <h3>This results in this change:</h3>
   <img src="https://raw.githubusercontent.com/polytrackmods/PolyUI/main/0.0.0/documentation1.png">
+  <h3 style="padding: 0 40px">Notice how the onClick parameter is an inputed as an arrow function so that the console.log does not get executed when addMenuButton is called.<br> The order of the buttons starts at 1, which represents the left most position (before the customize button).</h3>
 </div>
