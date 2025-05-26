@@ -50,19 +50,26 @@ class puiMod extends PolyMod {
     polyModLoader.registerFuncMixin("hD", MixinType.TAIL, () => {
       const subdata = this.uiButtons.filter(arr => arr[0] === "mnu");
       subdata.forEach((item) => {
-        item[1].addEventListener("click", () => {
-          n.playUIClick();
-          item[2]();
+        item[1].addEventListener("click",() => {
+            n.playUIClick();
+            item[2]();
         });
-  
-        wD(this, nD, "f").appendChild(item[1]);
-  
-        if (item[3] && Number.isInteger(item[3])) {
-          wD(this, iD, "f").splice(item[3] - 1, 0, item[1]);
+
+        
+        if (Number.isInteger(item[3]) && wD(this, iD, "f").length == item[3]) {
+            wD(this, nD, "f").appendChild(item[1]);
         } else {
-          wD(this, iD, "f").push(item[1]);
+            wD(this, nD, "f").insertBefore(item[1], wD(this, nD, "f").children[item[3]-1]);
         }
-      });
+        
+        if (item[3] && Number.isInteger(item[3])) {
+            wD(this, iD, "f").splice(item[3]-1,0,item[1]);
+        } else {
+            wD(this, iD, "f").push(item[1]);
+        }
+
+        
+    });
     });
     
     polyModLoader.registerFuncMixin("$k", MixinType.INSERT, 'Kk(this, Ck, "f").prepend(m);', () => {
