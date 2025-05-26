@@ -13,13 +13,15 @@ h1 {
   font-family: 'ForcedSquare';
   font-weight: bold;
 }
-code {
+.code {
   color: white;
   background-color: #0F1B42;
   font-family: Consolas, Monaco, monospace;
   font-size: 0.95em;
-  padding: 10px 20px;
-  border-radius: 4px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  width: 60%;
+  display: inline-block;
 }
 .dec {
   color: red;
@@ -43,13 +45,13 @@ code {
   <br>
   <h2>Calling and Using Functions:</h2>
   <h3 style="padding: 0 40px;">In order to call a function from PUI in your mod, you first need to make sure you have PUI listed as a dependency in your mod's manifest.json (check out PML documentation for that).
-    <br>Next, in order to use it PUI functions in your mod's code, you will have to do this:</h3>
+    <br><br>Next, in order to use it PUI functions in your mod's code, you will have to do this:</h3>
   
-  <code>
+  <div class="code">
   <span class="dec">let</span> polyUI = pml.<span class="function">getMod</span>(<span class="string">"pui"</span>);
   <br>polyUI.<span class="function">function1</span>();
   <br>polyUI.<span class="function">function2</span>();
-  </code>
+  </div>
   <br>
   
 </div>
