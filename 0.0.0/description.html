@@ -3,10 +3,16 @@
   font-family: 'ForcedSquare';
   src: url('https://polytrackmods.github.io/PolyModLoader/a82f15d48dbc61b6edeb.woff2') format('woff2');
 }
-h2, h3, p {
+h3, p {
   color: white;
   font-family: 'ForcedSquare';
   font-weight: normal;
+}
+h2 {
+  color: white;
+  font-family: 'ForcedSquare';
+  font-weight: normal;
+  text-decoration: underline;
 }
 h1 {
   color: white;
@@ -16,7 +22,7 @@ h1 {
 .code {
   color: white;
   background-color: #0F1B42;
-  font-family: Consolas, Monaco, monospace;
+  font-family: 'ForcedSquare';
   font-size: 0.95em;
   padding: 10px 15px;
   border-radius: 10px;
@@ -32,6 +38,10 @@ h1 {
 .string {
   color: green;
 }
+.int {
+  color: orange;
+}
+  
 </style>
 <div style="text-align: center; background-color: #212b58;">
   <div style="background-color: #28346a;">
@@ -45,7 +55,7 @@ h1 {
   <br>
   <h2>Calling and Using Functions:</h2>
   <h3 style="padding: 0 40px;">In order to call a function from PUI in your mod, you first need to make sure you have PUI listed as a dependency in your mod's manifest.json (check out PML documentation for that).
-    <br><br>Next, in order to use it PUI functions in your mod's code, you will have to do this:</h3>
+    <br><br>Next, in order to use it PUI functions in your mod's code, you will have to write this:</h3>
   
   <div class="code">
   <span class="dec">let</span> polyUI = pml.<span class="function">getMod</span>(<span class="string">"pui"</span>);
@@ -53,5 +63,11 @@ h1 {
   <br>polyUI.<span class="function">function2</span>();
   </div>
   <br>
-  
+  <h3>From here, you can call and use any of the following functions.</h3><br><br>
+  <h1>All PUI Functions:</h1>
+  <h2>addMenuButton:</h2>
+  <div class="code">
+    <span class="function">addMenuButton</span>(<span class="string">image_path</span>, <span class="string">text</span>, <span class="function">onClick</span>, <span class="int">order (optional)</span>)
+  </div>
+  <h3>This function adds a button to the main menu screen of polytrack. <br><br> Here is an example implementation of this:</h3>  
 </div>
