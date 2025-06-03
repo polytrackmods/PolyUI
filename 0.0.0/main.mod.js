@@ -47,7 +47,7 @@ class puiMod extends PolyMod {
       }
     };
 
-    polyModLoader.registerFuncMixin("hD", MixinType.TAIL, () => {
+    polyModLoader.registerFuncMixin("hD.prototype", MixinType.TAIL, () => {
       const subdata = this.uiButtons.filter(arr => arr[0] === "mnu");
       subdata.forEach((item) => {
         item[1].addEventListener("click",() => {
@@ -72,7 +72,7 @@ class puiMod extends PolyMod {
     });
     });
     
-    polyModLoader.registerFuncMixin("$k", MixinType.INSERT, 'Kk(this, Ck, "f").prepend(m);', () => {
+    polyModLoader.registerFuncMixin("$k.prototype", MixinType.INSERT, 'Kk(this, Ck, "f").prepend(m);', () => {
       this.createTabs();
       this.uiTabs.forEach((item) => {
         const button = item[3];
